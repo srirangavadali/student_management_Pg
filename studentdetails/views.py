@@ -1,9 +1,19 @@
 from django.shortcuts import render
 from .models import Student
 from django.http import HttpResponse
+
 def index(request):
     return render(request, 'index.html')
+
+def homepage(request):
+    return render(request,'home.html')
+
 def rec_data(request):
+    Firstname = ""
+    Lastname=""
+    RollNumber=""
+    Class=""
+
     if request.method == 'POST':
       Firstname= request.POST["fname"]
       Lastname = request.POST["lname"]
@@ -13,7 +23,7 @@ def rec_data(request):
 
     dicta = {
          'First_name': Firstname,'Last_name': Lastname,'Roll_number': RollNumber,'Class':Class }
-    #print(dicta)
+
 
     s=Student()
     s.Firstname = Firstname
@@ -26,6 +36,8 @@ def rec_data(request):
     context['all_students'] = all_students
     return render(request,'rec_data.html',context=context)
 
+def homepage(request):
+    return render(request,'home.html')
 
 
 
