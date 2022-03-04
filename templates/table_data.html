@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+table, th, td {
+  border:1px solid blue;
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>table</title>
+</head>
+<body>
+<h2>Student table</h2>
+
+<table style="width:75%">
+  <tr>
+    <th>FirstName</th>
+    <th>LastName</th>
+    <th>RollNumber</th>
+      <th>Class</th>
+  </tr>
+
+    <tr>
+     {% for student in all_students %}
+    <td>{{student.Firstname}}</td>
+       <td>{{student.Lastname}}</td>
+       <td>{{student.RollNumber}}</td>
+       <td>{{student.Class}}</td>
+     {% endfor %}
+    </tr>
+
+</table>
+</body>
+</html>

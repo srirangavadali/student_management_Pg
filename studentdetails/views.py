@@ -39,5 +39,7 @@ def rec_data(request):
 def homepage(request):
     return render(request,'home.html')
 
+def table_data(request):
+    return render(request,'table_data.html')
 
 
